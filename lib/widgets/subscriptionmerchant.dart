@@ -8,6 +8,9 @@ import 'package:testapp/controller/subscription_controller.dart';
 import 'package:testapp/main.dart';
 import 'package:testapp/view/paymentScreen.dart';
 
+import '../constants.dart';
+import '../model/local_storage_model.dart';
+
 class Subscription_merchant extends StatelessWidget {
   String imageAddress;
   String text;
@@ -110,6 +113,9 @@ class Subscription_merchant extends StatelessWidget {
                             print("Completed");
                             // Get.back();
                             Get.back();
+                            writeSecureData(
+                                StorageItem("subscription", 'subscribed'));
+                            CompletionSnackBar('Payment Completed');
                             Future.delayed(const Duration(seconds: 2), () {
                               changepage();
                             });

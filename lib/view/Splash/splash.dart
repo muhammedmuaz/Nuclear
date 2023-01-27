@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:testapp/TvScreens/tvstartScreen.dart';
@@ -19,11 +21,15 @@ class _SplashScreenState extends State<SplashScreen> {
   final SubscriptionController controller = Get.put(SubscriptionController());
   String subscription = '';
   Future<bool> checkfortv() async {
-    DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
-    AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-    bool isTV =
-        androidInfo.systemFeatures.contains('android.software.leanback_only');
-    return isTV;
+    if (Platform.isAndroid) {
+      DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+      AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
+      bool isTV =
+          androidInfo.systemFeatures.contains('android.software.leanback_only');
+      return isTV;
+    } else {
+      return false;
+    }
   }
 
   @override

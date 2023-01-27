@@ -85,6 +85,7 @@ class _AllshowsPageState extends State<AllshowsPage> {
             child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
               controller: _scrollController,
+              physics: const ClampingScrollPhysics(),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,

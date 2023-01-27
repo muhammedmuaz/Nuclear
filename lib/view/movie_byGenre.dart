@@ -68,6 +68,7 @@ class _Movie_byGenreScreenState extends State<Movie_byGenreScreen> {
                     const EdgeInsets.only(left: 24.0, right: 24.0, top: 5.0),
                 child: SingleChildScrollView(
                   controller: _scrollController,
+                  physics: const ClampingScrollPhysics(),
                   child: Obx(() {
                     return _movieController.isloadingdetailgenremovies.value
                         ? Container(
