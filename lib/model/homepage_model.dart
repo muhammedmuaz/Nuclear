@@ -1,3 +1,7 @@
+// To parse this JSON data, do
+//
+//     final homePageModel = homePageModelFromJson(jsonString);
+
 import 'dart:convert';
 
 HomePageModel homePageModelFromJson(String str) => HomePageModel.fromJson(json.decode(str));
@@ -115,6 +119,7 @@ class HomeSections3 {
         required this.moviePoster,
         required this.movieDuration,
         required this.movieAccess,
+        this.moviePosterVideoImage,
     });
 
     int movieId;
@@ -122,13 +127,15 @@ class HomeSections3 {
     String moviePoster;
     String movieDuration;
     MovieAccess movieAccess;
+    String? moviePosterVideoImage;
 
     factory HomeSections3.fromJson(Map<String, dynamic> json) => HomeSections3(
         movieId: json["movie_id"],
         movieTitle: json["movie_title"],
         moviePoster: json["movie_poster"],
         movieDuration: json["movie_duration"],
-        movieAccess: movieAccessValues.map![json["movie_access"]]!,
+        movieAccess: movieAccessValues.map[json["movie_access"]]!,
+        moviePosterVideoImage: json["movie_poster_video_image"],
     );
 
     Map<String, dynamic> toJson() => {
@@ -137,6 +144,7 @@ class HomeSections3 {
         "movie_poster": moviePoster,
         "movie_duration": movieDuration,
         "movie_access": movieAccessValues.reverse[movieAccess],
+        "movie_poster_video_image": moviePosterVideoImage,
     };
 }
 
@@ -175,34 +183,32 @@ class RecentlyWatched {
         required this.movieName,
         required this.videoId,
         required this.videoType,
+        required this.videoImagesFull,
         required this.videoThumbImage,
     });
 
     String movieName;
     int videoId;
-    VideoType videoType;
+    String videoType;
+    String videoImagesFull;
     String videoThumbImage;
 
     factory RecentlyWatched.fromJson(Map<String, dynamic> json) => RecentlyWatched(
         movieName: json["movie_name"],
         videoId: json["video_id"],
-        videoType: videoTypeValues.map![json["video_type"]]!,
+        videoType: json["video_type"],
+        videoImagesFull: json["video_images_full"],
         videoThumbImage: json["video_thumb_image"],
     );
 
     Map<String, dynamic> toJson() => {
         "movie_name": movieName,
         "video_id": videoId,
-        "video_type": videoTypeValues.reverse[videoType],
+        "video_type": videoType,
+        "video_images_full": videoImagesFull,
         "video_thumb_image": videoThumbImage,
     };
 }
-
-enum VideoType { MOVIES }
-
-final videoTypeValues = EnumValues({
-    "Movies": VideoType.MOVIES
-});
 
 class Slider {
     Slider({
@@ -233,15 +239,13 @@ class Slider {
 }
 
 class EnumValues<T> {
-    Map<String, T>? map;
-    Map<T, String>? reverseMap;
+    Map<String, T> map;
+    late Map<T, String> reverseMap;
 
     EnumValues(this.map);
 
     Map<T, String> get reverse {
-        if (reverseMap == null) {
-            reverseMap = map!.map((k, v) => new MapEntry(v, k));
-        }
-        return reverseMap!;
+        reverseMap = map.map((k, v) => MapEntry(v, k));
+        return reverseMap;
     }
 }

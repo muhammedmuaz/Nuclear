@@ -4,8 +4,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:testapp/TvScreens/tvhomepage.dart';
 import 'package:testapp/TvScreens/tvsignupScreen.dart';
-import 'package:testapp/view/StartScreens/signin.dart';
-
 import '../constants.dart';
 import '../controller/auth_controller.dart';
 import '../view/StartScreens/forgot_password.dart';
