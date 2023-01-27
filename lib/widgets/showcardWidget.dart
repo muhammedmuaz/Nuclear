@@ -28,40 +28,47 @@ class ShowCardWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Container(
-              height: 150,
-              width: double.infinity,
-              margin: const EdgeInsets.symmetric(vertical: 10),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10.0),
-                child: ExtendedImage.network(
-                  fit: BoxFit.fill,
-                  // imageUrl:
-                  imgurl,
-                  loadStateChanged: (state) {
-                    if (state.extendedImageLoadState == LoadState.loading) {
-                      return Shimmer.fromColors(
-                        baseColor: boxColor,
-                        highlightColor: Colors.white10,
-                        child: Container(
-                          height: double.infinity,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                              color: boxColor,
-                              borderRadius: BorderRadius.circular(10.0)),
-                        ),
-                      );
-                    }
-                  },
+            Flexible(
+              flex: 4,
+              child: Container(
+                height: 150,
+                width: double.infinity,
+                margin: const EdgeInsets.symmetric(vertical: 10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10.0),
+                  child: ExtendedImage.network(
+                    fit: BoxFit.fill,
+                    // imageUrl:
+                    imgurl,
+                    loadStateChanged: (state) {
+                      if (state.extendedImageLoadState == LoadState.loading) {
+                        return Shimmer.fromColors(
+                          baseColor: boxColor,
+                          highlightColor: Colors.white10,
+                          child: Container(
+                            height: double.infinity,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                                color: boxColor,
+                                borderRadius: BorderRadius.circular(10.0)),
+                          ),
+                        );
+                      }
+                    },
+                  ),
                 ),
               ),
             ),
             const SizedBox(height: 5),
-            AutoSizeText(title.length < 30 ? title : title.substring(0, 30),
-                style: GoogleFonts.inter(color: Colors.white, fontSize: 15.0)),
+            Flexible(
+              child: AutoSizeText(
+                  title.length < 30 ? title : title.substring(0, 30),
+                  style:
+                      GoogleFonts.inter(color: Colors.white, fontSize: 15.0)),
+            ),
           ],
         ));
   }

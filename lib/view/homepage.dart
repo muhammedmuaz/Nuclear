@@ -2,12 +2,10 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
 import 'package:testapp/controller/movie_controller.dart';
 import 'package:testapp/view/moviedetailPage.dart';
-import 'package:testapp/view/notificationScreen.dart';
 import 'package:testapp/view/Shows/showdetailPage.dart';
 import 'package:testapp/widgets/custom_textfield.dart';
 import 'package:testapp/widgets/textWidget.dart';
@@ -706,12 +704,6 @@ class _HomePageState extends State<HomePage> {
                                                                       .white,
                                                                   fontSize:
                                                                       15.0)),
-                                                      // const SizedBox(height: 5),
-                                                      // AutoSizeText("1h 15min | Sci-Fi",
-                                                      //     style: TextStyle(
-                                                      //         color: Colors.grey
-                                                      //             .withOpacity(0.8),
-                                                      //         fontSize: 12.0))
                                                     ],
                                                   )),
                                             );
@@ -767,82 +759,92 @@ class _HomePageState extends State<HomePage> {
                                                     mainAxisAlignment:
                                                         MainAxisAlignment.start,
                                                     children: [
-                                                      Container(
-                                                        height: 155,
-                                                        width: 182,
-                                                        margin: const EdgeInsets
-                                                                .symmetric(
-                                                            vertical: 10),
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      10.0),
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      12.0),
-                                                          child:
-                                                              CachedNetworkImage(
-                                                            fit: BoxFit.fill,
-                                                            imageUrl: moviecontroller
-                                                                .homepagemovies!
-                                                                .videoStreamingApp
-                                                                .latestMovies[
-                                                                    index]
-                                                                .moviePoster,
-                                                            placeholder:
-                                                                (context, url) {
-                                                              return Shimmer
-                                                                  .fromColors(
-                                                                baseColor:
-                                                                    boxColor,
-                                                                highlightColor:
-                                                                    Colors
-                                                                        .white10,
-                                                                child:
-                                                                    Container(
-                                                                  height: double
-                                                                      .infinity,
-                                                                  width: double
-                                                                      .infinity,
-                                                                  decoration: BoxDecoration(
-                                                                      color:
-                                                                          boxColor,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              10.0)),
-                                                                ),
-                                                              );
-                                                            },
+                                                      Flexible(
+                                                        flex: 4,
+                                                        child: Container(
+                                                          height: 155,
+                                                          width: 182,
+                                                          margin:
+                                                              const EdgeInsets
+                                                                      .symmetric(
+                                                                  vertical: 10),
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                          child: ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
+                                                            child:
+                                                                CachedNetworkImage(
+                                                              fit: BoxFit.fill,
+                                                              imageUrl: moviecontroller
+                                                                  .homepagemovies!
+                                                                  .videoStreamingApp
+                                                                  .latestMovies[
+                                                                      index]
+                                                                  .moviePoster,
+                                                              placeholder:
+                                                                  (context,
+                                                                      url) {
+                                                                return Shimmer
+                                                                    .fromColors(
+                                                                  baseColor:
+                                                                      boxColor,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .white10,
+                                                                  child:
+                                                                      Container(
+                                                                    height: double
+                                                                        .infinity,
+                                                                    width: double
+                                                                        .infinity,
+                                                                    decoration: BoxDecoration(
+                                                                        color:
+                                                                            boxColor,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(10.0)),
+                                                                  ),
+                                                                );
+                                                              },
+                                                            ),
                                                           ),
                                                         ),
                                                       ),
                                                       const SizedBox(height: 5),
-                                                      AutoSizeText(
-                                                          moviecontroller
-                                                              .homepagemovies!
-                                                              .videoStreamingApp
-                                                              .latestMovies[
-                                                                  index]
-                                                              .movieTitle,
-                                                          style:
-                                                              const TextStyle(
-                                                                  color: Colors
-                                                                      .white,
-                                                                  fontSize:
-                                                                      15.0)),
+                                                      Flexible(
+                                                        child: AutoSizeText(
+                                                            moviecontroller
+                                                                .homepagemovies!
+                                                                .videoStreamingApp
+                                                                .latestMovies[
+                                                                    index]
+                                                                .movieTitle,
+                                                            style:
+                                                                const TextStyle(
+                                                                    color: Colors
+                                                                        .white,
+                                                                    fontSize:
+                                                                        15.0)),
+                                                      ),
                                                       const SizedBox(height: 5),
-                                                      AutoSizeText(
-                                                          "1h 15min | Sci-Fi",
-                                                          style: TextStyle(
-                                                              color: Colors.grey
-                                                                  .withOpacity(
-                                                                      0.8),
-                                                              fontSize: 12.0))
+                                                      Flexible(
+                                                        child: AutoSizeText(
+                                                            "1h 15min | Sci-Fi",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .grey
+                                                                    .withOpacity(
+                                                                        0.8),
+                                                                fontSize:
+                                                                    12.0)),
+                                                      )
                                                     ],
                                                   )),
                                             );
@@ -894,82 +896,92 @@ class _HomePageState extends State<HomePage> {
                                                     mainAxisAlignment:
                                                         MainAxisAlignment.start,
                                                     children: [
-                                                      Container(
-                                                        height: 155,
-                                                        width: 182,
-                                                        margin: const EdgeInsets
-                                                                .symmetric(
-                                                            vertical: 10),
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      10.0),
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      12.0),
-                                                          child:
-                                                              CachedNetworkImage(
-                                                            fit: BoxFit.fill,
-                                                            imageUrl: moviecontroller
-                                                                .homepagemovies!
-                                                                .videoStreamingApp
-                                                                .latestShows[
-                                                                    index]
-                                                                .showPoster,
-                                                            placeholder:
-                                                                (context, url) {
-                                                              return Shimmer
-                                                                  .fromColors(
-                                                                baseColor:
-                                                                    boxColor,
-                                                                highlightColor:
-                                                                    Colors
-                                                                        .white10,
-                                                                child:
-                                                                    Container(
-                                                                  height: double
-                                                                      .infinity,
-                                                                  width: double
-                                                                      .infinity,
-                                                                  decoration: BoxDecoration(
-                                                                      color:
-                                                                          boxColor,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              10.0)),
-                                                                ),
-                                                              );
-                                                            },
+                                                      Flexible(
+                                                        flex: 4,
+                                                        child: Container(
+                                                          height: 155,
+                                                          width: 182,
+                                                          margin:
+                                                              const EdgeInsets
+                                                                      .symmetric(
+                                                                  vertical: 10),
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                          child: ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
+                                                            child:
+                                                                CachedNetworkImage(
+                                                              fit: BoxFit.fill,
+                                                              imageUrl: moviecontroller
+                                                                  .homepagemovies!
+                                                                  .videoStreamingApp
+                                                                  .latestShows[
+                                                                      index]
+                                                                  .showPoster,
+                                                              placeholder:
+                                                                  (context,
+                                                                      url) {
+                                                                return Shimmer
+                                                                    .fromColors(
+                                                                  baseColor:
+                                                                      boxColor,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .white10,
+                                                                  child:
+                                                                      Container(
+                                                                    height: double
+                                                                        .infinity,
+                                                                    width: double
+                                                                        .infinity,
+                                                                    decoration: BoxDecoration(
+                                                                        color:
+                                                                            boxColor,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(10.0)),
+                                                                  ),
+                                                                );
+                                                              },
+                                                            ),
                                                           ),
                                                         ),
                                                       ),
                                                       const SizedBox(height: 5),
-                                                      AutoSizeText(
-                                                          moviecontroller
-                                                              .homepagemovies!
-                                                              .videoStreamingApp
-                                                              .latestShows[
-                                                                  index]
-                                                              .showTitle,
-                                                          style:
-                                                              const TextStyle(
-                                                                  color: Colors
-                                                                      .white,
-                                                                  fontSize:
-                                                                      15.0)),
+                                                      Flexible(
+                                                        child: AutoSizeText(
+                                                            moviecontroller
+                                                                .homepagemovies!
+                                                                .videoStreamingApp
+                                                                .latestShows[
+                                                                    index]
+                                                                .showTitle,
+                                                            style:
+                                                                const TextStyle(
+                                                                    color: Colors
+                                                                        .white,
+                                                                    fontSize:
+                                                                        15.0)),
+                                                      ),
                                                       const SizedBox(height: 5),
-                                                      AutoSizeText(
-                                                          "1h 15min | Sci-Fi",
-                                                          style: TextStyle(
-                                                              color: Colors.grey
-                                                                  .withOpacity(
-                                                                      0.8),
-                                                              fontSize: 12.0))
+                                                      Flexible(
+                                                        child: AutoSizeText(
+                                                            "1h 15min | Sci-Fi",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .grey
+                                                                    .withOpacity(
+                                                                        0.8),
+                                                                fontSize:
+                                                                    12.0)),
+                                                      )
                                                     ],
                                                   )),
                                             );
@@ -996,63 +1008,7 @@ class _HomePageState extends State<HomePage> {
                                       .videoStreamingApp
                                       .popularMovies
                                       .isNotEmpty
-                                  ?
-                                  // moviecontroller.isloadingplatestmovies.value
-                                  //     ? SizedBox(
-                                  //         height: 250,
-                                  //         child: ListView.builder(
-                                  //             scrollDirection: Axis.horizontal,
-                                  //             itemCount: 3,
-                                  //             itemBuilder:
-                                  //                 (BuildContext context, index) {
-                                  //               return Container(
-                                  //                 width: 182,
-                                  //                 margin:
-                                  //                     const EdgeInsets.symmetric(
-                                  //                         horizontal: 10.0),
-                                  //                 child: GestureDetector(
-                                  //                     child: Column(
-                                  //                   crossAxisAlignment:
-                                  //                       CrossAxisAlignment.start,
-                                  //                   mainAxisAlignment:
-                                  //                       MainAxisAlignment.start,
-                                  //                   children: [
-                                  //                     Container(
-                                  //                         height: 155,
-                                  //                         width: 182,
-                                  //                         margin: const EdgeInsets
-                                  //                                 .symmetric(
-                                  //                             vertical: 10),
-                                  //                         decoration: BoxDecoration(
-                                  //                           borderRadius:
-                                  //                               BorderRadius
-                                  //                                   .circular(10.0),
-                                  //                         ),
-                                  //                         child: Shimmer.fromColors(
-                                  //                           baseColor: boxColor,
-                                  //                           highlightColor:
-                                  //                               Colors.white10,
-                                  //                           child: Container(
-                                  //                             height:
-                                  //                                 double.infinity,
-                                  //                             width:
-                                  //                                 double.infinity,
-                                  //                             decoration: BoxDecoration(
-                                  //                                 color: boxColor,
-                                  //                                 borderRadius:
-                                  //                                     BorderRadius
-                                  //                                         .circular(
-                                  //                                             10.0)),
-                                  //                           ),
-                                  //                         )),
-                                  //                     const SizedBox(height: 5),
-                                  //                   ],
-                                  //                 )),
-                                  //               );
-                                  //             }),
-                                  //       )
-                                  //     :
-                                  SizedBox(
+                                  ? SizedBox(
                                       height: 250,
                                       child: ListView.builder(
                                           scrollDirection: Axis.horizontal,
@@ -1085,82 +1041,92 @@ class _HomePageState extends State<HomePage> {
                                                     mainAxisAlignment:
                                                         MainAxisAlignment.start,
                                                     children: [
-                                                      Container(
-                                                        height: 155,
-                                                        width: 182,
-                                                        margin: const EdgeInsets
-                                                                .symmetric(
-                                                            vertical: 10),
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      10.0),
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      12.0),
-                                                          child:
-                                                              CachedNetworkImage(
-                                                            fit: BoxFit.fill,
-                                                            imageUrl: moviecontroller
-                                                                .homepagemovies!
-                                                                .videoStreamingApp
-                                                                .popularMovies[
-                                                                    index]
-                                                                .moviePoster,
-                                                            placeholder:
-                                                                (context, url) {
-                                                              return Shimmer
-                                                                  .fromColors(
-                                                                baseColor:
-                                                                    boxColor,
-                                                                highlightColor:
-                                                                    Colors
-                                                                        .white10,
-                                                                child:
-                                                                    Container(
-                                                                  height: double
-                                                                      .infinity,
-                                                                  width: double
-                                                                      .infinity,
-                                                                  decoration: BoxDecoration(
-                                                                      color:
-                                                                          boxColor,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              10.0)),
-                                                                ),
-                                                              );
-                                                            },
+                                                      Flexible(
+                                                        flex: 4,
+                                                        child: Container(
+                                                          height: 155,
+                                                          width: 182,
+                                                          margin:
+                                                              const EdgeInsets
+                                                                      .symmetric(
+                                                                  vertical: 10),
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                          child: ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
+                                                            child:
+                                                                CachedNetworkImage(
+                                                              fit: BoxFit.fill,
+                                                              imageUrl: moviecontroller
+                                                                  .homepagemovies!
+                                                                  .videoStreamingApp
+                                                                  .popularMovies[
+                                                                      index]
+                                                                  .moviePoster,
+                                                              placeholder:
+                                                                  (context,
+                                                                      url) {
+                                                                return Shimmer
+                                                                    .fromColors(
+                                                                  baseColor:
+                                                                      boxColor,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .white10,
+                                                                  child:
+                                                                      Container(
+                                                                    height: double
+                                                                        .infinity,
+                                                                    width: double
+                                                                        .infinity,
+                                                                    decoration: BoxDecoration(
+                                                                        color:
+                                                                            boxColor,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(10.0)),
+                                                                  ),
+                                                                );
+                                                              },
+                                                            ),
                                                           ),
                                                         ),
                                                       ),
                                                       const SizedBox(height: 5),
-                                                      AutoSizeText(
-                                                          moviecontroller
-                                                              .homepagemovies!
-                                                              .videoStreamingApp
-                                                              .popularMovies[
-                                                                  index]
-                                                              .movieTitle,
-                                                          style:
-                                                              const TextStyle(
-                                                                  color: Colors
-                                                                      .white,
-                                                                  fontSize:
-                                                                      15.0)),
+                                                      Flexible(
+                                                        child: AutoSizeText(
+                                                            moviecontroller
+                                                                .homepagemovies!
+                                                                .videoStreamingApp
+                                                                .popularMovies[
+                                                                    index]
+                                                                .movieTitle,
+                                                            style:
+                                                                const TextStyle(
+                                                                    color: Colors
+                                                                        .white,
+                                                                    fontSize:
+                                                                        15.0)),
+                                                      ),
                                                       const SizedBox(height: 5),
-                                                      AutoSizeText(
-                                                          "1h 15min | Sci-Fi",
-                                                          style: TextStyle(
-                                                              color: Colors.grey
-                                                                  .withOpacity(
-                                                                      0.8),
-                                                              fontSize: 12.0))
+                                                      Flexible(
+                                                        child: AutoSizeText(
+                                                            "1h 15min | Sci-Fi",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .grey
+                                                                    .withOpacity(
+                                                                        0.8),
+                                                                fontSize:
+                                                                    12.0)),
+                                                      )
                                                     ],
                                                   )),
                                             );
@@ -1213,82 +1179,92 @@ class _HomePageState extends State<HomePage> {
                                                     mainAxisAlignment:
                                                         MainAxisAlignment.start,
                                                     children: [
-                                                      Container(
-                                                        height: 155,
-                                                        width: 182,
-                                                        margin: const EdgeInsets
-                                                                .symmetric(
-                                                            vertical: 10),
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      10.0),
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      12.0),
-                                                          child:
-                                                              CachedNetworkImage(
-                                                            fit: BoxFit.fill,
-                                                            imageUrl: moviecontroller
-                                                                .homepagemovies!
-                                                                .videoStreamingApp
-                                                                .popularShows[
-                                                                    index]
-                                                                .showPoster,
-                                                            placeholder:
-                                                                (context, url) {
-                                                              return Shimmer
-                                                                  .fromColors(
-                                                                baseColor:
-                                                                    boxColor,
-                                                                highlightColor:
-                                                                    Colors
-                                                                        .white10,
-                                                                child:
-                                                                    Container(
-                                                                  height: double
-                                                                      .infinity,
-                                                                  width: double
-                                                                      .infinity,
-                                                                  decoration: BoxDecoration(
-                                                                      color:
-                                                                          boxColor,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              10.0)),
-                                                                ),
-                                                              );
-                                                            },
+                                                      Flexible(
+                                                        flex: 4,
+                                                        child: Container(
+                                                          height: 155,
+                                                          width: 182,
+                                                          margin:
+                                                              const EdgeInsets
+                                                                      .symmetric(
+                                                                  vertical: 10),
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                          child: ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
+                                                            child:
+                                                                CachedNetworkImage(
+                                                              fit: BoxFit.fill,
+                                                              imageUrl: moviecontroller
+                                                                  .homepagemovies!
+                                                                  .videoStreamingApp
+                                                                  .popularShows[
+                                                                      index]
+                                                                  .showPoster,
+                                                              placeholder:
+                                                                  (context,
+                                                                      url) {
+                                                                return Shimmer
+                                                                    .fromColors(
+                                                                  baseColor:
+                                                                      boxColor,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .white10,
+                                                                  child:
+                                                                      Container(
+                                                                    height: double
+                                                                        .infinity,
+                                                                    width: double
+                                                                        .infinity,
+                                                                    decoration: BoxDecoration(
+                                                                        color:
+                                                                            boxColor,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(10.0)),
+                                                                  ),
+                                                                );
+                                                              },
+                                                            ),
                                                           ),
                                                         ),
                                                       ),
                                                       const SizedBox(height: 5),
-                                                      AutoSizeText(
-                                                          moviecontroller
-                                                              .homepagemovies!
-                                                              .videoStreamingApp
-                                                              .popularShows[
-                                                                  index]
-                                                              .showTitle,
-                                                          style:
-                                                              const TextStyle(
-                                                                  color: Colors
-                                                                      .white,
-                                                                  fontSize:
-                                                                      15.0)),
+                                                      Flexible(
+                                                        child: AutoSizeText(
+                                                            moviecontroller
+                                                                .homepagemovies!
+                                                                .videoStreamingApp
+                                                                .popularShows[
+                                                                    index]
+                                                                .showTitle,
+                                                            style:
+                                                                const TextStyle(
+                                                                    color: Colors
+                                                                        .white,
+                                                                    fontSize:
+                                                                        15.0)),
+                                                      ),
                                                       const SizedBox(height: 5),
-                                                      AutoSizeText(
-                                                          "1h 15min | Sci-Fi",
-                                                          style: TextStyle(
-                                                              color: Colors.grey
-                                                                  .withOpacity(
-                                                                      0.8),
-                                                              fontSize: 12.0))
+                                                      Flexible(
+                                                        child: AutoSizeText(
+                                                            "1h 15min | Sci-Fi",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .grey
+                                                                    .withOpacity(
+                                                                        0.8),
+                                                                fontSize:
+                                                                    12.0)),
+                                                      )
                                                     ],
                                                   )),
                                             );
@@ -1317,63 +1293,7 @@ class _HomePageState extends State<HomePage> {
                                       .videoStreamingApp
                                       .homeSections3
                                       .isNotEmpty
-                                  ?
-                                  // moviecontroller.isloadingplatestmovies.value
-                                  //     ? SizedBox(
-                                  //         height: 250,
-                                  //         child: ListView.builder(
-                                  //             scrollDirection: Axis.horizontal,
-                                  //             itemCount: 3,
-                                  //             itemBuilder:
-                                  //                 (BuildContext context, index) {
-                                  //               return Container(
-                                  //                 width: 182,
-                                  //                 margin:
-                                  //                     const EdgeInsets.symmetric(
-                                  //                         horizontal: 10.0),
-                                  //                 child: GestureDetector(
-                                  //                     child: Column(
-                                  //                   crossAxisAlignment:
-                                  //                       CrossAxisAlignment.start,
-                                  //                   mainAxisAlignment:
-                                  //                       MainAxisAlignment.start,
-                                  //                   children: [
-                                  //                     Container(
-                                  //                         height: 155,
-                                  //                         width: 182,
-                                  //                         margin: const EdgeInsets
-                                  //                                 .symmetric(
-                                  //                             vertical: 10),
-                                  //                         decoration: BoxDecoration(
-                                  //                           borderRadius:
-                                  //                               BorderRadius
-                                  //                                   .circular(10.0),
-                                  //                         ),
-                                  //                         child: Shimmer.fromColors(
-                                  //                           baseColor: boxColor,
-                                  //                           highlightColor:
-                                  //                               Colors.white10,
-                                  //                           child: Container(
-                                  //                             height:
-                                  //                                 double.infinity,
-                                  //                             width:
-                                  //                                 double.infinity,
-                                  //                             decoration: BoxDecoration(
-                                  //                                 color: boxColor,
-                                  //                                 borderRadius:
-                                  //                                     BorderRadius
-                                  //                                         .circular(
-                                  //                                             10.0)),
-                                  //                           ),
-                                  //                         )),
-                                  //                     const SizedBox(height: 5),
-                                  //                   ],
-                                  //                 )),
-                                  //               );
-                                  //             }),
-                                  //       )
-                                  //     :
-                                  SizedBox(
+                                  ? SizedBox(
                                       height: 250,
                                       child: ListView.builder(
                                           scrollDirection: Axis.horizontal,
@@ -1406,115 +1326,127 @@ class _HomePageState extends State<HomePage> {
                                                     mainAxisAlignment:
                                                         MainAxisAlignment.start,
                                                     children: [
-                                                      Container(
-                                                        height: 155,
-                                                        width: 182,
-                                                        margin: const EdgeInsets
-                                                                .symmetric(
-                                                            vertical: 10),
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      10.0),
-                                                        ),
-                                                        child: ClipRRect(
+                                                      Flexible(
+                                                        flex: 4,
+                                                        child: Container(
+                                                          height: 155,
+                                                          width: 182,
+                                                          margin:
+                                                              const EdgeInsets
+                                                                      .symmetric(
+                                                                  vertical: 10),
+                                                          decoration:
+                                                              BoxDecoration(
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        12.0),
-                                                            child: ExtendedImage
-                                                                .network(
-                                                              fit: BoxFit.fill,
-                                                              // imageUrl:
-                                                              moviecontroller
-                                                                  .homepagemovies!
-                                                                  .videoStreamingApp
-                                                                  .homeSections3[
-                                                                      index]
-                                                                  .moviePoster,
-                                                              loadStateChanged:
-                                                                  (state) {
-                                                                if (state
-                                                                        .extendedImageLoadState ==
-                                                                    LoadState
-                                                                        .loading) {
-                                                                  return Shimmer
-                                                                      .fromColors(
-                                                                    baseColor:
-                                                                        boxColor,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .white10,
-                                                                    child:
-                                                                        Container(
-                                                                      height: double
-                                                                          .infinity,
-                                                                      width: double
-                                                                          .infinity,
-                                                                      decoration: BoxDecoration(
-                                                                          color:
-                                                                              boxColor,
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(10.0)),
-                                                                    ),
-                                                                  );
-                                                                }
-                                                              },
-                                                            )
-                                                            //     CachedNetworkImage(
-                                                            //   fit: BoxFit.fill,
-                                                            //   imageUrl: ,
-                                                            //   placeholder:
-                                                            //       (context, url) {
-                                                            //     return Shimmer
-                                                            //         .fromColors(
-                                                            //       baseColor:
-                                                            //           boxColor,
-                                                            //       highlightColor:
-                                                            //           Colors
-                                                            //               .white10,
-                                                            //       child:
-                                                            //           Container(
-                                                            //         height: double
-                                                            //             .infinity,
-                                                            //         width: double
-                                                            //             .infinity,
-                                                            //         decoration: BoxDecoration(
-                                                            //             color:
-                                                            //                 boxColor,
-                                                            //             borderRadius:
-                                                            //                 BorderRadius.circular(
-                                                            //                     10.0)),
-                                                            //       ),
-                                                            //     );
-                                                            //   },
-                                                            // ),
-                                                            ),
+                                                                        10.0),
+                                                          ),
+                                                          child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          12.0),
+                                                              child:
+                                                                  ExtendedImage
+                                                                      .network(
+                                                                fit:
+                                                                    BoxFit.fill,
+                                                                // imageUrl:
+                                                                moviecontroller
+                                                                    .homepagemovies!
+                                                                    .videoStreamingApp
+                                                                    .homeSections3[
+                                                                        index]
+                                                                    .moviePoster,
+                                                                loadStateChanged:
+                                                                    (state) {
+                                                                  if (state
+                                                                          .extendedImageLoadState ==
+                                                                      LoadState
+                                                                          .loading) {
+                                                                    return Shimmer
+                                                                        .fromColors(
+                                                                      baseColor:
+                                                                          boxColor,
+                                                                      highlightColor:
+                                                                          Colors
+                                                                              .white10,
+                                                                      child:
+                                                                          Container(
+                                                                        height:
+                                                                            double.infinity,
+                                                                        width: double
+                                                                            .infinity,
+                                                                        decoration: BoxDecoration(
+                                                                            color:
+                                                                                boxColor,
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(10.0)),
+                                                                      ),
+                                                                    );
+                                                                  }
+                                                                },
+                                                              )
+                                                              //     CachedNetworkImage(
+                                                              //   fit: BoxFit.fill,
+                                                              //   imageUrl: ,
+                                                              //   placeholder:
+                                                              //       (context, url) {
+                                                              //     return Shimmer
+                                                              //         .fromColors(
+                                                              //       baseColor:
+                                                              //           boxColor,
+                                                              //       highlightColor:
+                                                              //           Colors
+                                                              //               .white10,
+                                                              //       child:
+                                                              //           Container(
+                                                              //         height: double
+                                                              //             .infinity,
+                                                              //         width: double
+                                                              //             .infinity,
+                                                              //         decoration: BoxDecoration(
+                                                              //             color:
+                                                              //                 boxColor,
+                                                              //             borderRadius:
+                                                              //                 BorderRadius.circular(
+                                                              //                     10.0)),
+                                                              //       ),
+                                                              //     );
+                                                              //   },
+                                                              // ),
+                                                              ),
+                                                        ),
                                                       ),
                                                       const SizedBox(height: 5),
-                                                      AutoSizeText(
-                                                          moviecontroller
-                                                              .homepagemovies!
-                                                              .videoStreamingApp
-                                                              .homeSections3[
-                                                                  index]
-                                                              .movieTitle,
-                                                          style:
-                                                              const TextStyle(
-                                                                  color: Colors
-                                                                      .white,
-                                                                  fontSize:
-                                                                      15.0)),
+                                                      Flexible(
+                                                        child: AutoSizeText(
+                                                            moviecontroller
+                                                                .homepagemovies!
+                                                                .videoStreamingApp
+                                                                .homeSections3[
+                                                                    index]
+                                                                .movieTitle,
+                                                            style:
+                                                                const TextStyle(
+                                                                    color: Colors
+                                                                        .white,
+                                                                    fontSize:
+                                                                        15.0)),
+                                                      ),
                                                       const SizedBox(height: 2),
-                                                      AutoSizeText(
-                                                          "1h 15min | Sci-Fi",
-                                                          style: TextStyle(
-                                                              color: Colors.grey
-                                                                  .withOpacity(
-                                                                      0.8),
-                                                              fontSize: 12.0))
+                                                      Flexible(
+                                                        child: AutoSizeText(
+                                                            "1h 15min | Sci-Fi",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .grey
+                                                                    .withOpacity(
+                                                                        0.8),
+                                                                fontSize:
+                                                                    12.0)),
+                                                      )
                                                     ],
                                                   )),
                                             );
@@ -1543,64 +1475,7 @@ class _HomePageState extends State<HomePage> {
                                       .videoStreamingApp
                                       .homeSections4
                                       .isNotEmpty
-                                  ?
-                                  // moviecontroller.isloadingplatestmovies.value
-                                  //     ?
-                                  //     SizedBox(
-                                  //         height: 250,
-                                  //         child: ListView.builder(
-                                  //             scrollDirection: Axis.horizontal,
-                                  //             itemCount: 3,
-                                  //             itemBuilder:
-                                  //                 (BuildContext context, index) {
-                                  //               return Container(
-                                  //                 width: 182,
-                                  //                 margin:
-                                  //                     const EdgeInsets.symmetric(
-                                  //                         horizontal: 10.0),
-                                  //                 child: GestureDetector(
-                                  //                     child: Column(
-                                  //                   crossAxisAlignment:
-                                  //                       CrossAxisAlignment.start,
-                                  //                   mainAxisAlignment:
-                                  //                       MainAxisAlignment.start,
-                                  //                   children: [
-                                  //                     Container(
-                                  //                         height: 155,
-                                  //                         width: 182,
-                                  //                         margin: const EdgeInsets
-                                  //                                 .symmetric(
-                                  //                             vertical: 10),
-                                  //                         decoration: BoxDecoration(
-                                  //                           borderRadius:
-                                  //                               BorderRadius
-                                  //                                   .circular(10.0),
-                                  //                         ),
-                                  //                         child: Shimmer.fromColors(
-                                  //                           baseColor: boxColor,
-                                  //                           highlightColor:
-                                  //                               Colors.white10,
-                                  //                           child: Container(
-                                  //                             height:
-                                  //                                 double.infinity,
-                                  //                             width:
-                                  //                                 double.infinity,
-                                  //                             decoration: BoxDecoration(
-                                  //                                 color: boxColor,
-                                  //                                 borderRadius:
-                                  //                                     BorderRadius
-                                  //                                         .circular(
-                                  //                                             10.0)),
-                                  //                           ),
-                                  //                         )),
-                                  //                     const SizedBox(height: 5),
-                                  //                   ],
-                                  //                 )),
-                                  //               );
-                                  //             }),
-                                  //       )
-                                  //     :
-                                  SizedBox(
+                                  ? SizedBox(
                                       height: 250,
                                       child: ListView.builder(
                                           scrollDirection: Axis.horizontal,
@@ -1633,82 +1508,92 @@ class _HomePageState extends State<HomePage> {
                                                     mainAxisAlignment:
                                                         MainAxisAlignment.start,
                                                     children: [
-                                                      Container(
-                                                        height: 155,
-                                                        width: 182,
-                                                        margin: const EdgeInsets
-                                                                .symmetric(
-                                                            vertical: 10),
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      10.0),
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      12.0),
-                                                          child:
-                                                              CachedNetworkImage(
-                                                            fit: BoxFit.fill,
-                                                            imageUrl: moviecontroller
-                                                                .homepagemovies!
-                                                                .videoStreamingApp
-                                                                .homeSections4[
-                                                                    index]
-                                                                .moviePoster,
-                                                            placeholder:
-                                                                (context, url) {
-                                                              return Shimmer
-                                                                  .fromColors(
-                                                                baseColor:
-                                                                    boxColor,
-                                                                highlightColor:
-                                                                    Colors
-                                                                        .white10,
-                                                                child:
-                                                                    Container(
-                                                                  height: double
-                                                                      .infinity,
-                                                                  width: double
-                                                                      .infinity,
-                                                                  decoration: BoxDecoration(
-                                                                      color:
-                                                                          boxColor,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              10.0)),
-                                                                ),
-                                                              );
-                                                            },
+                                                      Flexible(
+                                                        flex: 4,
+                                                        child: Container(
+                                                          height: 155,
+                                                          width: 182,
+                                                          margin:
+                                                              const EdgeInsets
+                                                                      .symmetric(
+                                                                  vertical: 10),
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                          child: ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
+                                                            child:
+                                                                CachedNetworkImage(
+                                                              fit: BoxFit.fill,
+                                                              imageUrl: moviecontroller
+                                                                  .homepagemovies!
+                                                                  .videoStreamingApp
+                                                                  .homeSections4[
+                                                                      index]
+                                                                  .moviePoster,
+                                                              placeholder:
+                                                                  (context,
+                                                                      url) {
+                                                                return Shimmer
+                                                                    .fromColors(
+                                                                  baseColor:
+                                                                      boxColor,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .white10,
+                                                                  child:
+                                                                      Container(
+                                                                    height: double
+                                                                        .infinity,
+                                                                    width: double
+                                                                        .infinity,
+                                                                    decoration: BoxDecoration(
+                                                                        color:
+                                                                            boxColor,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(10.0)),
+                                                                  ),
+                                                                );
+                                                              },
+                                                            ),
                                                           ),
                                                         ),
                                                       ),
                                                       const SizedBox(height: 5),
-                                                      AutoSizeText(
-                                                          moviecontroller
-                                                              .homepagemovies!
-                                                              .videoStreamingApp
-                                                              .homeSections4[
-                                                                  index]
-                                                              .movieTitle,
-                                                          style:
-                                                              const TextStyle(
-                                                                  color: Colors
-                                                                      .white,
-                                                                  fontSize:
-                                                                      15.0)),
+                                                      Flexible(
+                                                        child: AutoSizeText(
+                                                            moviecontroller
+                                                                .homepagemovies!
+                                                                .videoStreamingApp
+                                                                .homeSections4[
+                                                                    index]
+                                                                .movieTitle,
+                                                            style:
+                                                                const TextStyle(
+                                                                    color: Colors
+                                                                        .white,
+                                                                    fontSize:
+                                                                        15.0)),
+                                                      ),
                                                       const SizedBox(height: 2),
-                                                      AutoSizeText(
-                                                          "1h 15min | Sci-Fi",
-                                                          style: TextStyle(
-                                                              color: Colors.grey
-                                                                  .withOpacity(
-                                                                      0.8),
-                                                              fontSize: 12.0))
+                                                      Flexible(
+                                                        child: AutoSizeText(
+                                                            "1h 15min | Sci-Fi",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .grey
+                                                                    .withOpacity(
+                                                                        0.8),
+                                                                fontSize:
+                                                                    12.0)),
+                                                      )
                                                     ],
                                                   )),
                                             );
@@ -1737,63 +1622,7 @@ class _HomePageState extends State<HomePage> {
                                       .videoStreamingApp
                                       .homeSections5
                                       .isNotEmpty
-                                  ?
-                                  // moviecontroller.isloadingplatestmovies.value
-                                  //     ? SizedBox(
-                                  //         height: 250,
-                                  //         child: ListView.builder(
-                                  //             scrollDirection: Axis.horizontal,
-                                  //             itemCount: 3,
-                                  //             itemBuilder:
-                                  //                 (BuildContext context, index) {
-                                  //               return Container(
-                                  //                 width: 182,
-                                  //                 margin:
-                                  //                     const EdgeInsets.symmetric(
-                                  //                         horizontal: 10.0),
-                                  //                 child: GestureDetector(
-                                  //                     child: Column(
-                                  //                   crossAxisAlignment:
-                                  //                       CrossAxisAlignment.start,
-                                  //                   mainAxisAlignment:
-                                  //                       MainAxisAlignment.start,
-                                  //                   children: [
-                                  //                     Container(
-                                  //                         height: 155,
-                                  //                         width: 182,
-                                  //                         margin: const EdgeInsets
-                                  //                                 .symmetric(
-                                  //                             vertical: 10),
-                                  //                         decoration: BoxDecoration(
-                                  //                           borderRadius:
-                                  //                               BorderRadius
-                                  //                                   .circular(10.0),
-                                  //                         ),
-                                  //                         child: Shimmer.fromColors(
-                                  //                           baseColor: boxColor,
-                                  //                           highlightColor:
-                                  //                               Colors.white10,
-                                  //                           child: Container(
-                                  //                             height:
-                                  //                                 double.infinity,
-                                  //                             width:
-                                  //                                 double.infinity,
-                                  //                             decoration: BoxDecoration(
-                                  //                                 color: boxColor,
-                                  //                                 borderRadius:
-                                  //                                     BorderRadius
-                                  //                                         .circular(
-                                  //                                             10.0)),
-                                  //                           ),
-                                  //                         )),
-                                  //                     const SizedBox(height: 5),
-                                  //                   ],
-                                  //                 )),
-                                  //               );
-                                  //             }),
-                                  //       )
-                                  //     :
-                                  SizedBox(
+                                  ? SizedBox(
                                       height: 250,
                                       child: ListView.builder(
                                           scrollDirection: Axis.horizontal,
@@ -1826,82 +1655,92 @@ class _HomePageState extends State<HomePage> {
                                                     mainAxisAlignment:
                                                         MainAxisAlignment.start,
                                                     children: [
-                                                      Container(
-                                                        height: 155,
-                                                        width: 182,
-                                                        margin: const EdgeInsets
-                                                                .symmetric(
-                                                            vertical: 10),
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      10.0),
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      12.0),
-                                                          child:
-                                                              CachedNetworkImage(
-                                                            fit: BoxFit.fill,
-                                                            imageUrl: moviecontroller
-                                                                .homepagemovies!
-                                                                .videoStreamingApp
-                                                                .homeSections5[
-                                                                    index]
-                                                                .moviePoster,
-                                                            placeholder:
-                                                                (context, url) {
-                                                              return Shimmer
-                                                                  .fromColors(
-                                                                baseColor:
-                                                                    boxColor,
-                                                                highlightColor:
-                                                                    Colors
-                                                                        .white10,
-                                                                child:
-                                                                    Container(
-                                                                  height: double
-                                                                      .infinity,
-                                                                  width: double
-                                                                      .infinity,
-                                                                  decoration: BoxDecoration(
-                                                                      color:
-                                                                          boxColor,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              10.0)),
-                                                                ),
-                                                              );
-                                                            },
+                                                      Flexible(
+                                                        flex: 4,
+                                                        child: Container(
+                                                          height: 155,
+                                                          width: 182,
+                                                          margin:
+                                                              const EdgeInsets
+                                                                      .symmetric(
+                                                                  vertical: 10),
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10.0),
+                                                          ),
+                                                          child: ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
+                                                            child:
+                                                                CachedNetworkImage(
+                                                              fit: BoxFit.fill,
+                                                              imageUrl: moviecontroller
+                                                                  .homepagemovies!
+                                                                  .videoStreamingApp
+                                                                  .homeSections5[
+                                                                      index]
+                                                                  .moviePoster,
+                                                              placeholder:
+                                                                  (context,
+                                                                      url) {
+                                                                return Shimmer
+                                                                    .fromColors(
+                                                                  baseColor:
+                                                                      boxColor,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .white10,
+                                                                  child:
+                                                                      Container(
+                                                                    height: double
+                                                                        .infinity,
+                                                                    width: double
+                                                                        .infinity,
+                                                                    decoration: BoxDecoration(
+                                                                        color:
+                                                                            boxColor,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(10.0)),
+                                                                  ),
+                                                                );
+                                                              },
+                                                            ),
                                                           ),
                                                         ),
                                                       ),
                                                       const SizedBox(height: 5),
-                                                      AutoSizeText(
-                                                          moviecontroller
-                                                              .homepagemovies!
-                                                              .videoStreamingApp
-                                                              .homeSections5[
-                                                                  index]
-                                                              .movieTitle,
-                                                          style:
-                                                              const TextStyle(
-                                                                  color: Colors
-                                                                      .white,
-                                                                  fontSize:
-                                                                      15.0)),
+                                                      Flexible(
+                                                        child: AutoSizeText(
+                                                            moviecontroller
+                                                                .homepagemovies!
+                                                                .videoStreamingApp
+                                                                .homeSections5[
+                                                                    index]
+                                                                .movieTitle,
+                                                            style:
+                                                                const TextStyle(
+                                                                    color: Colors
+                                                                        .white,
+                                                                    fontSize:
+                                                                        15.0)),
+                                                      ),
                                                       const SizedBox(height: 2),
-                                                      AutoSizeText(
-                                                          "1h 15min | Sci-Fi",
-                                                          style: TextStyle(
-                                                              color: Colors.grey
-                                                                  .withOpacity(
-                                                                      0.8),
-                                                              fontSize: 12.0))
+                                                      Flexible(
+                                                        child: AutoSizeText(
+                                                            "1h 15min | Sci-Fi",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .grey
+                                                                    .withOpacity(
+                                                                        0.8),
+                                                                fontSize:
+                                                                    12.0)),
+                                                      )
                                                     ],
                                                   )),
                                             );
