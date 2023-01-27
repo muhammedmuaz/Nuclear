@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\Ahmed raza\\Documents\\GitHub\\Nuclear\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw\\values-sw.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Ahmed raza\\.gradle\\caches\\transforms-3\\025c8cbf893de551222b9cedbfbe126a\\transformed\\core-1.9.0\\res\\values-sw\\values-sw.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "704",
+                        "endColumns": "100",
+                        "endOffsets": "800"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Ahmed raza\\.gradle\\caches\\transforms-3\\942242748ea498534de4c8ff34c203cd\\transformed\\jetified-exoplayer-core-2.18.1\\res\\values-sw\\values-sw.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,118,177,239,306,384,465,552,634",
+                        "endColumns": "62,58,61,66,77,80,86,81,69",
+                        "endOffsets": "113,172,234,301,379,460,547,629,699"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:get/get.dart';
 import 'package:testapp/model/bookmark_model.dart';
-import 'package:http/http.dart' as http;
 
 import '../constants.dart';
 import '../services/remote_services.dart';
