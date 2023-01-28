@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_paypal/flutter_paypal.dart';
@@ -7,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:testapp/controller/subscription_controller.dart';
 import 'package:testapp/main.dart';
 import 'package:testapp/view/paymentScreen.dart';
-
 import '../constants.dart';
 import '../model/local_storage_model.dart';
 

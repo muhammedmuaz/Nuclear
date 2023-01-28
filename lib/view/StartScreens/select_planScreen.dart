@@ -1,9 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:testapp/controller/subscription_controller.dart';
-import 'package:testapp/videoPlayer/video_player.dart';
 import 'package:testapp/view/StartScreens/plancreate_screen.dart';
 import 'package:testapp/view/paymentScreen.dart';
 import '../../constants.dart';

@@ -5,9 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:testapp/constants.dart';
 import 'package:testapp/controller/subscription_controller.dart';
 import 'package:testapp/view/merchantpage.dart';
-import 'package:testapp/view/paymentScreen.dart';
-
-import 'select_planScreen.dart';
 
 class CreditCardSurvey_Screen extends StatelessWidget {
   bool isfromhome;

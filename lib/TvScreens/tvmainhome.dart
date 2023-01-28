@@ -1,33 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:testapp/TvScreens/tvhomepage.dart';
-import 'package:testapp/TvScreens/tvsignupScreen.dart';
 import '../constants.dart';
-import '../controller/auth_controller.dart';
-import '../view/StartScreens/forgot_password.dart';
-import 'package:sidebarx/sidebarx.dart';
 import 'package:collapsible_sidebar/collapsible_sidebar.dart';
-
-// class TvMainScreen extends StatelessWidget {
-//   const TvMainScreen({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: backgroundColor,
-//       drawer: SidebarX(
-//         controller: SidebarXController(selectedIndex: 0, extended: true),
-//         items: const [
-//           SidebarXItem(icon: Icons.home, label: 'Home'),
-//           SidebarXItem(icon: Icons.search, label: 'Search'),
-//         ],
-//       ),
-//       body: const Center(child: Text('Your app body')),
-//     );
-//   }
-// }
 
 class TvMainScreen extends StatefulWidget {
   @override

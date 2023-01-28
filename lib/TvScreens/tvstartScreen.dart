@@ -3,9 +3,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:testapp/TvScreens/tvsignInScreen.dart';
 import 'package:testapp/TvScreens/tvsignupScreen.dart';
-
 import '../constants.dart';
-import '../view/StartScreens/signin.dart';
 
 class TvStartScreen extends StatefulWidget {
   const TvStartScreen({super.key});

@@ -87,40 +87,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                             foregroundImage:
                                 const AssetImage('assets/profile2.png'),
                           ),
-                          // Positioned(
-                          //   bottom: 1,
-                          //   right: 1,
-                          //   child: GestureDetector(
-                          //     onTap: (() => print("Edit Profile")),
-                          //     child: Container(
-                          //       padding: const EdgeInsets.all(2.0),
-                          //       decoration: BoxDecoration(
-                          //           border: Border.all(
-                          //             width: 3,
-                          //             color: Colors.orangeAccent,
-                          //           ),
-                          //           borderRadius: const BorderRadius.all(
-                          //             Radius.circular(
-                          //               50,
-                          //             ),
-                          //           ),
-                          //           color: Colors.orangeAccent,
-                          //           boxShadow: [
-                          //             BoxShadow(
-                          //               offset: const Offset(2, 4),
-                          //               color: Colors.black.withOpacity(
-                          //                 0.3,
-                          //               ),
-                          //               blurRadius: 3,
-                          //             ),
-                          //           ]),
-                          //       child: const ImageIcon(
-                          //         AssetImage("assets/editIcon.png"),
-                          //         color: Colors.white,
-                          //       ),
-                          //     ),
-                          //   ),
-                          // ),
                         ],
                       ),
                     ),

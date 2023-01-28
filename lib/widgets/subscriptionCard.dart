@@ -2,8 +2,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:testapp/view/merchantpage.dart';
-import 'package:testapp/view/paymentScreen.dart';
-
 import '../controller/subscription_controller.dart';
 
 class SubscriptionCard extends StatefulWidget {

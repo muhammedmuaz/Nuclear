@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:testapp/constants.dart';
 import 'package:testapp/controller/bookmark_controller.dart';
 import 'package:testapp/widgets/textWidget.dart';
-
 import '../widgets/movie_card.dart';
 
 class BookmarkScreen extends StatefulWidget {
